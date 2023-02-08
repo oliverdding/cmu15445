@@ -1,0 +1,1 @@
+select people.name as NAME, temp.cnt as NUM_APPEARANCES from (select person_id, count(*) as cnt from crew group by person_id order by cnt desc limit 20) as temp left join people on temp.person_id = people.person_id;
